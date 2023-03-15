@@ -221,11 +221,6 @@ li a:hover {
     border-bottom: 2px solid white;
     transition: 0.1s ease-in-out;
 }
-
-.hamburger {
-    display: none;
-}
-
 .mail {
     text-decoration: none;
     color: gray;
@@ -251,21 +246,29 @@ li a:hover {
 #tw:hover {
     color: #00acee;
 }
-
+/* MOBILE NAV */
+.hamburger {
+    display: none;
+}
 .mobile-nav {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     background-color: rgb(25, 22, 26);
-    width: 280px;
+    width: 100vw;
     height: 100vh;
-    padding: 30px;
+    padding: 90px 30px 30px 30px;
+    text-align: center;
+    z-index: 1;
+    font-size: 1.8rem;
 }
 
 .mobile-nav .top-menu {
     display: flex;
     flex-direction: column;
+    position: relative;
+    left: 10px;
 }
 
 /* MEDIA */
@@ -303,8 +306,20 @@ li a:hover {
 }
 
 @media(max-width:992px) {
+    li a:hover {
+        border-bottom: 2px solid white;
+        transition: 0.1s ease-in-out;
+    }
     .hamburger {
         display: block;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+    .mobile-nav button {
+        position: fixed;
+        top: 22px;
+        right: 10%;
         background: transparent;
         border: none;
         cursor: pointer;
@@ -341,11 +356,11 @@ li a:hover {
 
     .mobile-nav {
         display: block;
-        transform: translateX(-102%);
+        transform: translateY(-102%);
         transition: transform 0.4s;
     }
 }
-
+/* JS */
 .showMenu
 {
     transform: translateX(0);
